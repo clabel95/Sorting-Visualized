@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sorting Visualized</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+</head>
+
+<body>
+    <header class="header">
+        <h1>Sorting</h1>
+    </header>
+
+    <main>
+        <div class="Container">
+            <div class="Visualization">
+                <div class="Graph">
+                    <canvas id="Sort_Graph"></canvas>
+                </div>
+            </div>
+            <div class="User_Options">
+                <!-- add different options for the user to choose from -->
+                <!-- option for number of items to be sorted. -->
+                <!-- option for what sorting algorithm to be used -->
+                <label class="newSort" for="algo"style="display:none">Algorithm:</label>
+                <select class="newSort" name="algo" id="algo"style="display:none">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="binary">Binary Sort</option>
+                </select>
+                <button class="newSort" id="sort"style="display:none">Sort!</button>
+
+                <!-- I am going to set this up so that after the data is sorted then it will display the results 
+                and also display a randomize button so the data can be re-randomized. Then it will hide the results 
+                and display the sort options and the sort button. -->
+                <label for="sortSize">Input quantity of objects to sort</label>
+                <input type="number" name="sortSize" id="sortSize" value="10" min="2" max="100"> <!--for now i am setting this to 100 but i might change it later depending on how fast it is. --> 
+                <button class="results" id="randomize" >Randomize!</button>
+
+            </div>
+        </div>
+    </main>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+
+</html>
