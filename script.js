@@ -31,15 +31,8 @@ const Visualization = new Chart(ctx, {
     }
 });
 
-
-
-
-
-//var xValues = [];
-//var yValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
-
 function removeData(chart) {
-    console.log(chart.data.labels.length)
+    //console.log(chart.data.labels.length)
     while (chart.data.labels.length !== 0) {
         chart.data.labels.pop();
         chart.data.datasets.forEach((dataset) => {
@@ -62,13 +55,10 @@ function addData(chart, label, data) {
 
 
 function NewNumbers() {
+    //document.getElementById("randomize").style.display = "none";
+    //document.getElementById("randomize").style.display = "none";
     var quantityValue = document.querySelector("#sortSize");
-    console.log(quantityValue.value)
-    Array.from({ length: quantityValue.value }, () => Math.floor(Math.random() * 100));
-    //randomArray = (length, max) => [...new Array(length)].map(() => Math.round(Math.random() * max));
-
-    yValues = (Array.from({ length: quantityValue.value }, () => Math.floor(Math.random() * 100)))
-    console.log(yValues)
+    yValues = (Array.from({ length: quantityValue.value  }, () => (Math.floor(Math.random() * (1000 - 1) + 1))))
     removeData(Visualization);
     addData(Visualization, yValues)
 }
@@ -80,17 +70,7 @@ function UpdateNumbers(data){
     addData(Visualization, data);
 }
 
-function updateAll() {
-    console.log("is this doing anything?");
-    var clear = clearcanvas();
-    var newNumbers = NewNumbers();
-
-    clear;
-    newNumbers;
-}
-
-
 //randomize.addEventListener("click",UpdateNumbers);
 randomize.addEventListener("click", NewNumbers);
-window.onload = UpdateNumbers;
+window.onload = NewNumbers;
 
