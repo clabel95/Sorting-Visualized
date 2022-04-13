@@ -77,7 +77,7 @@ async function bubbleSort(arr) {
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 150)
+                }, 200)
             );
 
         }
@@ -128,7 +128,7 @@ async function selectionSort(arr) {
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 300)
+                }, 200)
             );
             barColors[j] = "red";
             barColors[min] = "red";
