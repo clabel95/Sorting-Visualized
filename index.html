@@ -25,20 +25,24 @@
                 <!-- add different options for the user to choose from -->
                 <!-- option for number of items to be sorted. -->
                 <!-- option for what sorting algorithm to be used -->
-                <label id="" class="newSort" for="algo"style="display:none">Algorithm:</label>
-                <select class="newSort" name="algo" id="algo"style="display:none">
+                <label id="" class="newSort" for="algo">Algorithm:</label>
+                <select class="newSort" name="algo" id="algo">
                     <option value="bubble">Bubble Sort</option>
                     <option value="quick">Quick Sort</option>
                     <option value="binary">Binary Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
                 </select>
-                <button class="newSort" id="sort"style="display:none">Sort!</button>
+
+                <button class="sort" id="sort_btn">Sort!</button>
 
                 <!-- I am going to set this up so that after the data is sorted then it will display the results 
                 and also display a randomize button so the data can be re-randomized. Then it will hide the results 
                 and display the sort options and the sort button. -->
                 <label for="sortSize">Input quantity of objects to sort</label>
-                <input type="number" name="sortSize" id="sortSize" value="10" min="2" max="100"> <!--for now i am setting this to 100 but i might change it later depending on how fast it is. --> 
-                <button class="results" id="randomize" >Randomize!</button>
+                <input type="number" name="sortSize" id="sortSize" value="10" min="2" max="100">
+                <!--for now i am setting this to 100 but i might change it later depending on how fast it is. -->
+                <button class="results" id="randomize">Randomize!</button>
 
             </div>
         </div>
