@@ -1,7 +1,7 @@
 html{
     height: 95%;
     padding: 1%;
-    font-size:4vw;
+    font-size:3vw;
     background-color: rgb(195, 245, 228);
 }
 
@@ -16,7 +16,7 @@ body{
     width: 100%;
     /* border:  solid red; */
     margin-bottom: 1%;
-    font-size: 4vw;
+    font-size: 3vw;
     justify-content: center;
     align-items: center;
 }
@@ -72,23 +72,23 @@ canvas{
 }
 #Sort_Options{
     
-    padding-top: 10%;
+    padding-top: 2%;
 }
 #Fresh_Numbers{
-    padding-top:10%;
+    padding-top:2%;
 }
 
 select{
     height: fit-content;
     width: fit-content;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 button{
-    font-size:4vw;
+    font-size:3vw;
 }
 #sortSize{
     width:10%;
 }
 input{
-    font-size:4vw;
+    font-size:3vw;
 }
