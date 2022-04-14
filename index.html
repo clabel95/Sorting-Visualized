@@ -11,7 +11,7 @@
 
 <body>
     <header class="header">
-        <h1>Sorting</h1>
+        <h1>Sorting Visualized</h1>
     </header>
 
     <main>
@@ -22,12 +22,14 @@
                 </div>
             </div>
             <div class="User_Options">
-                <div>
+                <div id="Sort_Options">
 
                     <!-- add different options for the user to choose from -->
                     <!-- option for number of items to be sorted. -->
                     <!-- option for what sorting algorithm to be used -->
+
                     <label id="" class="newSort" for="algo">Algorithm:</label>
+                    
                     <select class="newSort" name="algo" id="algo">
                         <option value="bubble">Bubble Sort</option>
                         <!-- <option value="quick">Quick Sort</option> -->
@@ -35,18 +37,28 @@
                         <option value="selection">Selection Sort</option>
                         <option value="insertion">Insertion Sort</option>
                     </select>
-                    
+
+                    <select id="speed" name="speed">
+                        <option value="0.1">Fastest</option>
+                        <option value="50">Faster</option>
+                        <option value="100">Fast</option>
+                        <option value="150">Normal</option>
+                        <option value="300">Slow</option>
+                    </select>
+
+
                     <button class="sort" id="sort_btn">Sort!</button>
                 </div>
-                <div>
+                <div id="Fresh_Numbers" style="display:none">
                     <!-- I am going to set this up so that after the data is sorted then it will display the results 
                         and also display a randomize button so the data can be re-randomized. Then it will hide the results 
                         and display the sort options and the sort button. -->
-                        <label for="sortSize">Input quantity of objects to sort</label>
-                        <input type="number" name="sortSize" id="sortSize" value="10" min="2" max="100">
-                        <!--for now i am setting this to 100 but i might change it later depending on how fast it is. -->
-                        <button class="results" id="randomize">Randomize!</button>
-                    </div>
+                    <label for="sortSize">Input quantity of objects to sort</label>
+                    <input  name="sortSize" id="sortSize" value="10" >
+                    <!--for now i am setting this to 100 but i might change it later depending on how fast it is. -->
+                    <button class="results" id="randomize">Randomize!</button>
+                    <p>* quantities over 40 will cause the sorting to run slower *</p>
+                </div>
 
             </div>
         </div>
