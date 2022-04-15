@@ -40,7 +40,8 @@
                     </select>
 
                     <select id="speed" name="speed">
-                        <option value="0.1">Fastest</option>
+                        <option value="0">No Delay</option>
+                        <option value="1">Fastest</option>
                         <option value="50">Faster</option>
                         <option value="100">Fast</option>
                         <option value="150">Normal</option>
@@ -51,6 +52,7 @@
                     <button class="sort" id="sort_btn">Sort!</button>
                 </div>
                 <div id="Fresh_Numbers" style="display:none">
+                    <p id="algo_time" style="display:none"></p>
                     <!-- I am going to set this up so that after the data is sorted then it will display the results 
                         and also display a randomize button so the data can be re-randomized. Then it will hide the results 
                         and display the sort options and the sort button. -->
@@ -58,7 +60,7 @@
                     <input  name="sortSize" id="sortSize" value="10" >
                     <!--for now i am setting this to 100 but i might change it later depending on how fast it is. -->
                     <button class="results" id="randomize">Randomize!</button>
-                    <p>* quantities over 40 will cause the sorting to run slower *</p>
+                    <p>* larger quantites should be run with no delay *</p>
                 </div>
 
             </div>

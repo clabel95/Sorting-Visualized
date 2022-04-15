@@ -2,8 +2,10 @@ html{
     height: 95%;
     padding: 1%;
     font-size:3vw;
-    background-color: rgb(195, 245, 228);
+    background-color: #36384C;
+    color: #E9DCCD
 }
+
 
 body{
     height:100%;
@@ -14,6 +16,7 @@ body{
     display:flex;
     height: 9%;
     width: 100%;
+    color: #e3bab3;
     /* border:  solid red; */
     margin-bottom: 1%;
     font-size: 3vw;
