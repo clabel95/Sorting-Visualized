@@ -5,6 +5,10 @@ var sort_options = document.querySelector("#Sort_Options")
 var sort = document.querySelector("#sort_btn");
 var algo_time = document.getElementById("algo_time")
 
+var abt_bubble = document.querySelector("#abt_bubble")
+var abt_selection = document.querySelector("#abt_selection")
+var abt_insertion = document.querySelector("#abt_insertion")
+var abt_radixSort = document.querySelector("#abt_radixSort")
 
 var choice = document.querySelector("#algo");
 var speed = document.querySelector("#speed");
@@ -82,7 +86,9 @@ async function insertionSort(arr) {
     };
     barColors = (Array.from({ length: l }, () => "green"))
     UpdateNumbers(arr, barColors);
-    fresh_numbers.style.display = "inline-block"
+    fresh_numbers.style.display = "inline-block";
+    abt_insertion.style.display = "flex";
+
     return arr;
 };
 
@@ -107,6 +113,7 @@ async function insertionSortND(arr) {
     UpdateNumbers(arr, barColors);
     fresh_numbers.style.display = "inline-block";
     algo_time.style.display = "flex";
+    abt_insertion.style.display = "flex";
     return arr;
 };
 
@@ -144,6 +151,7 @@ async function bubbleSort(arr) {
     barColors = (Array.from({ length: l }, () => "green"))
     UpdateNumbers(arr, barColors);
     fresh_numbers.style.display = "inline-block"
+    abt_bubble.style.display = "flex";
     return arr;
 };
 
@@ -167,6 +175,7 @@ async function bubbleSortND(arr) {
     UpdateNumbers(arr, barColors);
     fresh_numbers.style.display = "inline-block";
     algo_time.style.display = "flex";
+    abt_bubble.style.display = "flex";
     return arr;
 };
 
@@ -206,6 +215,8 @@ async function selectionSort(arr) {
     barColors = (Array.from({ length: l }, () => "green"))
     UpdateNumbers(arr, barColors);
     fresh_numbers.style.display = "inline-block"
+    abt_selection.style.display = "flex";
+
     return arr;
 };
 
@@ -236,6 +247,7 @@ async function selectionSortND(arr) {
     UpdateNumbers(arr, barColors);
     fresh_numbers.style.display = "inline-block"
     algo_time.style.display = "flex";
+    abt_selection.style.display = "flex";
     return arr;
 };
 
@@ -267,7 +279,7 @@ async function radixSort(arrOfNums) {
             let digit = getDigit(arrOfNums[i], k)
             digitBuckets[digit].push(arrOfNums[i])
             //if we wanted to do different bases then we would have to add move values to this to account for hex.
-            switch(digit){
+            switch (digit) {
                 case 0: colorBuckets[digit].push("#00FFFF"); break;
                 case 1: colorBuckets[digit].push("#0000FF"); break;
                 case 2: colorBuckets[digit].push("#00008B"); break;
@@ -288,15 +300,15 @@ async function radixSort(arrOfNums) {
         await new Promise((resolve) =>
             setTimeout(() => {
                 resolve();
-            }, speed.options[speed.selectedIndex].value)
+            }, (speed.options[speed.selectedIndex].value)*2)
         );
 
     }
     barColors = (Array.from({ length: l }, () => "green"))
     UpdateNumbers(arrOfNums, barColors);
     fresh_numbers.style.display = "inline-block"
+    abt_radixSort.style.display = "flex";
 }
-
 
 async function radixSortND(arrOfNums) {
     let maxDigitCount = mostDigits(arrOfNums)
@@ -325,15 +337,8 @@ async function radixSortND(arrOfNums) {
     UpdateNumbers(arrOfNums, barColors);
     fresh_numbers.style.display = "inline-block"
     algo_time.style.display = "flex";
+    abt_radixSort.style.display = "flex";
 }
-
-
-
-
-
-
-
-
 
 function instantSortChoice() {
     sort_options.style.display = "none";
@@ -359,6 +364,10 @@ function SortChoice() {
 function NewNumbers() {
     fresh_numbers.style.display = "none"
     algo_time.style.display = "none";
+    abt_bubble.style.display = "none";
+    abt_insertion.style.display = "none";
+    abt_radixSort.style.display = "none";
+    abt_selection.style.display = "none";
     var quantityValue = document.querySelector("#sortSize");
     barColors = (Array.from({ length: quantityValue.value }, () => "red"))
     yValues = (Array.from({ length: quantityValue.value }, () => (Math.floor(Math.random() * (10000000 - 1) + 1))))
@@ -375,6 +384,25 @@ function UpdateNumbers(data, colors) {
     addData(Visualization, data, colors);
 };
 
+function bubble_info() {
+    alert("info about the bubble sort method.")
+}
+function insertion_info() {
+    alert("info about the insertion sort method.")
+}
+function radix_info() {
+    alert("info about the radix sort method.")
+}
+function selection_info() {
+    alert("info about the selection sort method.")
+}
+
 randomize.addEventListener("click", NewNumbers);
 sort.addEventListener("click", SortChoice);
+
+abt_bubble.addEventListener("click", bubble_info);
+abt_insertion.addEventListener("click", insertion_info);
+abt_radixSort.addEventListener("click", radix_info);
+abt_selection.addEventListener("click", selection_info);
+
 window.onload = NewNumbers;
