@@ -1,3 +1,5 @@
+//import {NewNumbers, SortChoice} from "./helpers/helpers"
+
 var ctx = document.getElementById("Sort_Graph").getContext("2d");
 var randomize = document.querySelector("#randomize");
 var fresh_numbers = document.querySelector("#Fresh_Numbers")
